@@ -33,9 +33,9 @@
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-main class="grey lighten-2 rounded-lg ma-10 pa-10">
         <Nuxt />
-      </v-container>
+      </v-main>
     </v-main>
     <v-footer
       app
@@ -49,23 +49,29 @@
 export default {
   data () {
     return {
+      iconsURL: 'https://materialdesignicons.com/',
       drawer: false,
       fixed: true,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Introduktion',
+          icon: 'mdi-information-outline',
+          title: 'Introduction',
           to: '/'
         },
         {
-          icon: 'mdi-apps',
-          title: 'Vue.js grunder',
+          icon: 'mdi-alphabetical',
+          title: 'Vue.js basics',
           to: '/vuebasics-demo'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Komponenter',
+          icon: 'mdi-collage',
+          title: 'Components demo',
           to: '/components-demo'
+        },
+        {
+          icon: 'mdi-usb-flash-drive-outline',
+          title: 'Plugins demo',
+          to: '/plugins-demo'
         }
       ],
       right: true,

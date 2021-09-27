@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -21,7 +19,11 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/fetchPlugin.js', mode: 'client' },
+    { src: '~/plugins/serverPlugin.js', mode: 'server' },
+    { src: '~/plugins/globalPlugin.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

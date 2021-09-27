@@ -1,7 +1,7 @@
 <template>
-  <v-content>
-    <h1>Vad är Nuxt?</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque amet adipisci reprehenderit consequatur perferendis, eveniet aspernatur voluptas quidem culpa in et alias! Ipsum iste autem, quis cupiditate odio recusandae sit.</p>
+  <section>
+    <h1>What is Nuxt?</h1>
+    <p>An opinionated higher level front-end framework built on top of Vue.js, that ships with overrideable smart defaults.</p>
     <hr class="my-10">
     <h2>Ecosystem</h2>
     <p>https://vuejs.org/</p>
@@ -12,7 +12,7 @@
     <p>https://nuxtjs.org/</p>
     <p>https://masteringnuxt.com/</p>
     <hr class="my-10">
-    <h2>Interaktiv demo med VS Code - Live Share</h2>
-    <p>Påminn mig att distribuera live share read-only link</p>
-  </v-content>
+    <h2>Interactive demo with VS Code Live Share</h2>
+    <p>Remind me to distribute read-only link</p>
+  </section>
 </template>
