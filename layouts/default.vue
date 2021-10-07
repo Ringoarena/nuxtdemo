@@ -32,8 +32,8 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
-    <v-main>
-      <v-main class="grey lighten-2 rounded-lg ma-10 pa-10">
+    <v-main class="blue lighten-5">
+      <v-main class="white rounded-lg ma-16 pa-10">
         <Nuxt />
       </v-main>
     </v-main>
@@ -67,6 +67,11 @@ export default {
           icon: 'mdi-collage',
           title: 'Components demo',
           to: '/components-demo'
+        },
+        {
+          icon: 'mdi-book-open-page-variant',
+          title: 'Pages/router demo',
+          to: '/pages-demo'
         },
         {
           icon: 'mdi-usb-flash-drive-outline',
