@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>What is Nuxt?</h1>
-    <p>An opinionated higher level front-end framework built on top of Vue.js, that ships with smart defaults.</p>
+    <p>An higher level front-end framework built on top of Vue.js.</p>
     <hr class="my-10">
     <h2>Ecosystem</h2>
     <p>https://vuejs.org/</p>
