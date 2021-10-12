@@ -1,5 +1,4 @@
 export default (context, inject) => {
-  const serverVariable = 'Global message'
-
-  inject('globalMsg', serverVariable)
+  const globalVariable = 'Global message'
+  inject('globalMsg', globalVariable)
 }

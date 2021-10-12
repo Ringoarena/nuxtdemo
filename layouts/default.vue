@@ -54,9 +54,14 @@ export default {
       fixed: true,
       items: [
         {
-          icon: 'mdi-information-outline',
+          icon: 'mdi-information',
           title: 'Introduction',
           to: '/'
+        },
+        {
+          icon: 'mdi-folder-multiple',
+          title: 'Directories',
+          to: '/directories-intro'
         },
         {
           icon: 'mdi-alphabetical',
@@ -70,11 +75,11 @@ export default {
         },
         {
           icon: 'mdi-book-open-page-variant',
-          title: 'Pages/router demo',
+          title: 'Pages demo',
           to: '/pages-demo'
         },
         {
-          icon: 'mdi-usb-flash-drive-outline',
+          icon: 'mdi-usb-flash-drive',
           title: 'Plugins demo',
           to: '/plugins-demo'
         }

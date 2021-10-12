@@ -20,7 +20,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/fetchPlugin.js', mode: 'client' },
+    { src: '~/plugins/fetchPlugin.js' },
+    { src: '~/plugins/clientPlugin.js', mode: 'client' },
     { src: '~/plugins/serverPlugin.js', mode: 'server' },
     { src: '~/plugins/globalPlugin.js' },
   ],

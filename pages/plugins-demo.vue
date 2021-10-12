@@ -11,28 +11,34 @@
     </ol>
     <hr class="my-10">
     <h3>The following messages are injected on the...</h3>
-    <h3>Client side: <span class="blue--text">{{getPluginVariable}}</span></h3>
+    <h3>Client side: <span class="blue--text">{{getClientVariable}}</span></h3>
     <h3>Server side: <span class="blue--text">{{$serverMsg}}</span></h3>
-    <h3>Server side through merged data: <span class="blue--text">{{serverMsgLocal}}</span></h3>
+    <h3>Merged on the server side through "asyncData": <span class="blue--text">{{mergedServerMsg}}</span></h3>
     <h3>Both sides: <span class="blue--text">{{$globalMsg}}</span></h3>
     <hr class="my-10">
     <h2>Call functions injected by plugins</h2>
-    <v-text-field v-model="myInput" label="Regular"></v-text-field>
-    <v-btn :loading="loading" @click="handleClick" color="primary">Fetch!</v-btn>
-    <v-card v-for="(person) in persons" :key="person.name" :loading="person.clearing" class="ma-10">
-      <v-card-title>{{person.name}}</v-card-title>
-      <v-card-text>{{person.height}} cm tall</v-card-text>
-      <v-card-text>{{person.url}}</v-card-text>
-      <v-card-actions>
-      <v-btn
-        text
-        color="primary"
-        @click="clearData(person)"
-      >
-        Clear
-      </v-btn>
-    </v-card-actions>
-    </v-card>
+    <v-text-field v-model="myInput" label="Character id"></v-text-field>
+    <v-btn :loading="fetching" @click="handleClick" color="primary">Fetch!</v-btn>
+    <v-row class="mt-4">
+      <v-col cols="4" v-for="(person) in persons" :key="person.name">
+        <v-hover v-slot="{ hover }">
+          <v-card :elevation="hover ? 24 : 6" :loading="person.clearing">
+            <v-card-title>{{person.name}}</v-card-title>
+            <v-card-text>{{person.height}} cm tall</v-card-text>
+            <v-card-text>{{person.url}}</v-card-text>
+            <v-card-actions>
+            <v-btn
+              text
+              color="primary"
+              @click="clearData(person)"
+            >
+              Clear
+            </v-btn>
+          </v-card-actions>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-row>
   </section>
 </template>
 
@@ -41,28 +47,31 @@ export default {
   data() {
     return {
       myInput: 1,
-      loading: false,
+      fetching: false,
       persons: [],
     }
   },
   asyncData(context) {
     if(process.server) {
-      console.log('This code is executing on the server, the returned object will be merged with local data')
+      console.log('Executing on the server, nuxt will have access to the variable')
+    } else {
+      console.log('Executing on the client, nuxt will NOT have access to the variable')
     }
     return {
-      serverMsgLocal: context.$serverMsg,
+      mergedServerMsg: context.$serverMsg,
     }
   },
   methods: {
     async handleClick() {
-      this.loading = true
+      this.fetching = true
+      const arg = this.myInput
       setTimeout(async () => {
-        const person = await this.$fetchData(this.myInput)
+        const person = await this.$fetchData(arg)
         person.clearing = false;
         if (!this.persons.some((p) => p.name === person.name)) {
           this.persons.push(person)
         }
-        this.loading = false
+        this.fetching = false
       }, 1000)
     },
     clearData(person) {
@@ -70,18 +79,12 @@ export default {
       setTimeout(() => {
         this.persons = this.persons.filter((p) => p.name !== person.name)
       }, 4000)
-      
     }
   },
   computed: {
-    getPluginVariable() {
-      return this.$pluginVariable
+    getClientVariable() {
+      return this.$clientVariable
     }
   }
-
 }
 </script>
-
-<style>
-
-</style>

@@ -1,6 +1,4 @@
 export default (context, inject) => {
-  const theVariable = 'Luke, use the force!'
-
   const doFetch = async (id) => {
     const response = await fetch(`https://swapi.dev/api/people/${id}`)
     const data = await response.json()
@@ -11,7 +9,5 @@ export default (context, inject) => {
     }
     return person
   }
-
   inject('fetchData', doFetch)
-  inject('pluginVariable', theVariable)
 }
