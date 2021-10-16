@@ -79,10 +79,25 @@ export default {
           to: '/pages-demo'
         },
         {
+          icon: 'mdi-page-layout-body',
+          title: 'Layouts demo',
+          to: '/layouts-demo'
+        },
+        {
           icon: 'mdi-usb-flash-drive',
           title: 'Plugins demo',
           to: '/plugins-demo'
-        }
+        },
+        {
+          icon: 'mdi-middleware-outline',
+          title: 'Middleware demo',
+          to: '/middleware-demo'
+        },
+        {
+          icon: 'mdi-view-module',
+          title: 'Modules demo',
+          to: '/modules-demo'
+        },
       ],
       right: true,
       title: 'Nuxt.js Demo'

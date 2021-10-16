@@ -1,8 +1,8 @@
 <template>
   <section>
     <h1>Plugins demo</h1>
-    <h2>Plugins are used to provide a global, abstract interface to third party libraries.</h2>
-    <h2>They replace the vue.use(plugin) syntax</h2>
+    <p>Plugins are used to provide a global, abstract interface to third party libraries.</p>
+    <p>They replace the vue.use(plugin) syntax</p>
     <hr class="my-10">
     <ol>
       <li><h3>Create a plugin in the plugins folder</h3></li>
