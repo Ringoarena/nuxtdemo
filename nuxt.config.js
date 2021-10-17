@@ -30,19 +30,19 @@ export default {
   ],
 
   serverMiddleware: [
-    // body-parser middleware
     bodyParser.json(),
-    // session middleware
     session({
       secret: 'super-secret-key',
       resave: false,
       saveUninitialized: false,
       cookie: { maxAge: 60000 }
     }),
-    // Api middleware
-    // We add /api/login & /api/logout routes
     '~/server-middleware/APIGateway.js'
   ],
+
+  router: {
+    middleware: ['analytics']
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

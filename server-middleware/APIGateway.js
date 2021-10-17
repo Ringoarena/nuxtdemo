@@ -1,11 +1,10 @@
 import express from 'express'
 
-// Create express router
-const router = express.Router()
 
 // Transform req & res to have the same API as express
 // So we can use res.status() & res.json()
 const app = express()
+const router = express.Router()
 router.use((req, res, next) => {
   Object.setPrototypeOf(req, app.request)
   Object.setPrototypeOf(res, app.response)
@@ -14,7 +13,6 @@ router.use((req, res, next) => {
   next()
 })
 
-// Add POST - /api/login
 router.post('/login', (req, res) => {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -23,13 +21,11 @@ router.post('/login', (req, res) => {
   res.status(401).json({ message: 'Bad credentials' })
 })
 
-// Add POST - /api/logout
 router.post('/logout', (req, res) => {
   delete req.session.authUser
   res.json({ ok: true })
 })
 
-// Export the server middleware
 export default {
   path: '/api',
   handler: router

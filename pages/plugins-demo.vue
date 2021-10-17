@@ -12,7 +12,7 @@
     <hr class="my-10">
     <h3>The following messages are injected on the...</h3>
     <h3>Client side: <span class="blue--text">{{getClientVariable}}</span></h3>
-    <h3>Server side: <span class="blue--text">{{$serverMsg}}</span></h3>
+    <h3>Server side: <span class="blue--text" v-if="$serverMsg">{{ $serverMsg }}</span></h3>
     <h3>Merged on the server side through "asyncData": <span class="blue--text">{{mergedServerMsg}}</span></h3>
     <h3>Both sides: <span class="blue--text">{{$globalMsg}}</span></h3>
     <hr class="my-10">

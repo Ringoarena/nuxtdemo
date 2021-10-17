@@ -10,7 +10,6 @@
       </div>
 
       <v-btn
-        :disabled="loading"
         class="ma-1"
         color="grey"
         plain
@@ -19,11 +18,9 @@
       </v-btn>
 
       <v-btn
-        :loading="loading"
         class="ma-1"
         color="error"
         plain
-        @click="remove"
       >
         Delete
       </v-btn>

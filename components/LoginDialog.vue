@@ -77,8 +77,9 @@
         try {
           await this.$store.dispatch('login', {
               username: this.username,
-              password: this.password
+              password: this.password,
           })
+          this.$router.push('/')
           this.username = ''
           this.password = ''
           this.formError = null
@@ -88,7 +89,6 @@
         }
       },
       async handleLogout() {
-        console.log('logging out')
         await this.$store.dispatch('logout')
       }
     }
