@@ -31,6 +31,9 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+      <v-spacer />
+      <LoginDialog v-if="!$store.state.authUser" />
+      <v-btn v-else @click="handleLogout" color="primary">Logout</v-btn>
     </v-app-bar>
     <v-main class="blue lighten-5">
       <v-main class="white rounded-lg ma-16 pa-10">
@@ -100,7 +103,14 @@ export default {
         },
       ],
       right: true,
-      title: 'Nuxt.js Demo'
+      title: 'Nuxt.js Demo',
+      password: ''
+    }
+  },
+  methods: {
+    async handleLogout() {
+      console.log('logging out')
+      await this.$store.dispatch('logout')
     }
   }
 }

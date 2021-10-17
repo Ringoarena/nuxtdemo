@@ -1,3 +1,6 @@
+import bodyParser from 'body-parser'
+import session from 'express-session'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -24,6 +27,21 @@ export default {
     { src: '~/plugins/clientPlugin.js', mode: 'client' },
     { src: '~/plugins/serverPlugin.js', mode: 'server' },
     { src: '~/plugins/globalPlugin.js' },
+  ],
+
+  serverMiddleware: [
+    // body-parser middleware
+    bodyParser.json(),
+    // session middleware
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    // Api middleware
+    // We add /api/login & /api/logout routes
+    '~/server-middleware/APIGateway.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
