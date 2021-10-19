@@ -25,14 +25,14 @@
             <v-row>
               <v-col cols="12">
                 <v-text-field
-                  v-model="username"
+                  v-model="credentials.username"
                   label="Username"
                   required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                  v-model="password"
+                  v-model="credentials.password"
                   label="Password"
                   type="password"
                   required
@@ -68,17 +68,16 @@
   export default {
     data: () => ({
       dialog: false,
-      username: '',
-      password: '',
+      credentials: {
+        username: '',
+        password: '',
+      },
       formError: null
     }),
     methods: {
       async handleLogin() {
         try {
-          await this.$store.dispatch('login', {
-              username: this.username,
-              password: this.password,
-          })
+          await this.$store.dispatch('login', this.credentials)
           this.$router.push('/')
           this.username = ''
           this.password = ''
@@ -87,9 +86,6 @@
         } catch (error) {
           this.formError = error.message
         }
-      },
-      async handleLogout() {
-        await this.$store.dispatch('logout')
       }
     }
   }

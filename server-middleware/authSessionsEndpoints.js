@@ -1,8 +1,5 @@
 import express from 'express'
 
-
-// Transform req & res to have the same API as express
-// So we can use res.status() & res.json()
 const app = express()
 const router = express.Router()
 router.use((req, res, next) => {

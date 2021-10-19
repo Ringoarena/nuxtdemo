@@ -14,9 +14,9 @@ export const actions = {
       commit('SET_USER', req.session.authUser)
     }
   },
-  async login ({ commit }, { username, password }) {
+  async login ({ commit }, credentials) {
     try {
-      const { data } = await this.$axios.post('http://192.168.0.166:8080/api/login', { username, password })
+      const { data } = await this.$axios.post('/api/login', credentials)
       commit('SET_USER', data)
     } catch (error) {
       throw new Error(error.message)

@@ -17,10 +17,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  server: {
-    port: 8080,
-    host: '0.0.0.0'
-  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -41,7 +37,7 @@ export default {
       saveUninitialized: false,
       cookie: { maxAge: 60000 }
     }),
-    '~/server-middleware/APIGateway.js'
+    '~/server-middleware/authSessionsEndpoints.js'
   ],
 
   router: {
