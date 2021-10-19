@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <v-container>
     <h1>Layouts</h1>
-    <p>Layouts lets you specify the top level layout of your GUI</p>
     <hr class="my-10">
+    <p>Layouts lets you specify the top level layout of your GUI</p>
     <p>A Layout is a special page that mounts the current page along with other elements.</p>
     <p>For instance, the white box with rounted border that you currently see is a page, all the rest is part of the layout</p>
     <p>A page can decide which layout to use, and it can do so dynamically.</p>
@@ -17,13 +17,13 @@
     <div v-if="$device.isMobile">
       Device: Mobile
     </div>
-  </section>
-  </section>
+    </section>
+  </v-container>
 </template>
 
 <script>
 export default {
-  layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default'
+  layout: (context) => context.$device.isMobile ? 'mobile' : 'default'
 }
 </script>
 

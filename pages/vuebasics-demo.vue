@@ -1,7 +1,13 @@
 <template>
-  <section>
-    <h1 class="exampleClass">Vue.js basics</h1>
+  <v-container>
+    <h1>Vue.js basics</h1>
     <hr class="my-10">
+    <h2>In Vue.JS...</h2>
+    <ul>
+      <li><p>All components used on a page/component has to be imported and registered.</p></li>
+      <li><p>Every page has to be mapped to a URL manually.</p></li>
+      <li><p>All HTML is rendered in the client browser.</p></li>
+    </ul>
     <v-row v-if="person" class="mt-4">
         <v-col cols="4">
           <v-hover v-slot="{ hover }">
@@ -16,7 +22,7 @@
     <hr class="my-10">
     <p>{{ message }}</p>
     <MyButton @click="handleClick" />
-  </section>
+  </v-container>
 </template>
 
 <script>
@@ -49,10 +55,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.exampleClass {
-  background: dodgerblue;
-}
-
-</style>

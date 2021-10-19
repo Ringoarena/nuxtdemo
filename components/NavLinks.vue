@@ -22,16 +22,12 @@
 export default {
   data() {
     return {
+      iconsURL: 'https://materialdesignicons.com/',
       items: [
         {
           icon: 'mdi-information',
           title: 'Introduction',
           to: '/'
-        },
-        {
-          icon: 'mdi-folder-multiple',
-          title: 'Directories',
-          to: '/directories-intro'
         },
         {
           icon: 'mdi-alphabetical',
@@ -47,6 +43,16 @@ export default {
           icon: 'mdi-book-open-page-variant',
           title: 'Pages demo',
           to: '/pages-demo'
+        },
+        {
+          icon: 'mdi-database',
+          title: 'Store demo',
+          to: '/store-demo'
+        },
+        {
+          icon: 'mdi-folder-multiple',
+          title: 'Directories',
+          to: '/directories-intro'
         },
         {
           icon: 'mdi-page-layout-body',
@@ -67,6 +73,11 @@ export default {
           icon: 'mdi-view-module',
           title: 'Modules demo',
           to: '/modules-demo'
+        },
+        {
+          icon: 'mdi-stop-circle',
+          title: 'Ending',
+          to: '/ending'
         },
       ],
     }

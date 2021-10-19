@@ -3,7 +3,7 @@
     <v-navigation-drawer
       v-model="drawer"
       :clipped="true"
-      fixed
+      :fixed="true"
       app
     >
       <NavLinks />
@@ -36,12 +36,8 @@
 export default {
   data () {
     return {
-      iconsURL: 'https://materialdesignicons.com/',
       drawer: false,
-      fixed: true,
-      right: true,
       title: 'Nuxt.js Demo',
-      password: ''
     }
   },
   methods: {

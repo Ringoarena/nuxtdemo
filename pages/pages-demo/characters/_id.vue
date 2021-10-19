@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <v-container>
       <h1>/pages-demo/characters/{{id}}</h1>
       <v-row v-if="person" class="mt-4">
         <v-col cols="4">
@@ -12,11 +12,16 @@
           </v-hover>
         </v-col>
     </v-row>
-  </section>
+  </v-container>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      person: null
+    }
+  },
   async asyncData(context) {
     const id = context.params.id
     const person = await context.$fetchData(id)

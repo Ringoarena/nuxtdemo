@@ -1,15 +1,11 @@
 <template>
-  <section>
+  <v-container>
     <h1>What is Nuxt?</h1>
-    <p>An higher level front-end framework built on top of Vue.js.</p>
     <hr class="my-10">
-    <h2>Ecosystem</h2>
-    <p>https://vuejs.org/</p>
-    <p>https://vuex.vuejs.org/</p>
-    <p>https://vuetifyjs.com/en/</p>
-    <p>https://vueschool.io/</p>
-    <p>https://www.vuemastery.com/</p>
-    <p>https://nuxtjs.org/</p>
-    <p>https://masteringnuxt.com/</p>
-  </section>
+    <ul>
+      <li><p>Open source front-end framework built on top of Vue.js</p></li>
+      <li><p>Initial release date October 2016</p></li>
+      <li><p>Very active community</p></li>
+    </ul>
+  </v-container>
 </template>

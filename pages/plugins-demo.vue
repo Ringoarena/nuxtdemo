@@ -4,17 +4,22 @@
     <p>Plugins are used to provide a global, abstract interface to third party libraries.</p>
     <p>They replace the vue.use(plugin) syntax</p>
     <hr class="my-10">
-    <ol>
-      <li><h3>Create a plugin in the plugins folder</h3></li>
-      <li><h3>Register your plugin in nuxt.config.js</h3></li>
-      <li><h3>Access your plugin using the injected keys</h3></li>
-    </ol>
-    <hr class="my-10">
-    <h3>The following messages are injected on the...</h3>
-    <h3>Client side: <span class="blue--text">{{getClientVariable}}</span></h3>
-    <h3>Server side: <span class="blue--text" v-if="$serverMsg">{{ $serverMsg }}</span></h3>
-    <h3>Merged on the server side through "asyncData": <span class="blue--text">{{mergedServerMsg}}</span></h3>
-    <h3>Both sides: <span class="blue--text">{{$globalMsg}}</span></h3>
+    <v-row>
+      <v-col cols="6">
+        <ol>
+          <li><h3>Create a plugin in the plugins folder</h3></li>
+          <li><h3>Register your plugin in nuxt.config.js</h3></li>
+          <li><h3>Access your plugin using the injected keys</h3></li>
+        </ol>
+      </v-col>
+      <v-col cols="6">
+        <h3>The following messages are injected on the...</h3>
+        <h3>Client side: <span class="blue--text">{{getClientVariable}}</span></h3>
+        <h3>Server side: <span class="blue--text" v-if="$serverMsg">{{ $serverMsg }}</span></h3>
+        <h3>Merged on the server side through "asyncData": <span class="blue--text">{{mergedServerMsg}}</span></h3>
+        <h3>Both sides: <span class="blue--text">{{$globalMsg}}</span></h3>
+      </v-col>
+    </v-row>
     <hr class="my-10">
     <h2>Call functions injected by plugins</h2>
     <v-text-field v-model="myInput" label="Character id"></v-text-field>

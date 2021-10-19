@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <v-container>
       <h1>Pages demo</h1>
       <p>Nuxt automatically maps routes and page components based on the contents of the /pages directory</p>
       <hr class="my-10">
@@ -9,7 +9,7 @@
       <p>/pages/pages-demo/characters/_id.vue will be accessible through '/pages-demo/characters/{someId}'</p>
       <hr class="my-10">
       <nuxt-link to="/pages-demo/characters/1">/pages-demo/characters/1</nuxt-link>
-  </section>
+  </v-container>
 </template>
 
 <script>
@@ -19,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>
