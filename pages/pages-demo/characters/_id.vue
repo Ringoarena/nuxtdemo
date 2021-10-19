@@ -1,11 +1,17 @@
 <template>
   <section>
       <h1>/pages-demo/characters/{{id}}</h1>
-      <v-card v-if="person" class="ma-10">
-        <v-card-title>{{person.name}}</v-card-title>
-        <v-card-text>{{person.height}} cm tall</v-card-text>
-        <v-card-text>{{person.url}}</v-card-text>
-      </v-card>
+      <v-row v-if="person" class="mt-4">
+        <v-col cols="4">
+          <v-hover v-slot="{ hover }">
+            <v-card :elevation="hover ? 24 : 6">
+              <v-card-title>{{person.name}}</v-card-title>
+              <v-card-text>{{person.height}} cm tall</v-card-text>
+              <v-card-text>{{person.url}}</v-card-text>
+            </v-card>
+          </v-hover>
+        </v-col>
+    </v-row>
   </section>
 </template>
 

@@ -17,6 +17,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  server: {
+    port: 8080,
+    host: '0.0.0.0'
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -51,7 +55,11 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/device',
   ],
+  device: {
+    refreshOnResize: true
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

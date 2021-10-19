@@ -24,11 +24,6 @@
         <Nuxt />
       </div>
     </v-main>
-    <v-footer
-      app
-    >
-      <span>&copy; Rikard Virta, B3 Innovation {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
