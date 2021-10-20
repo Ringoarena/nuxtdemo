@@ -23,7 +23,12 @@
 
 <script>
 export default {
-  layout: (context) => context.$device.isMobile ? 'mobile' : 'default'
+  layout: (context) => context.$device.isMobile ? 'mobile' : 'default',
+  data() {
+    return {
+      var: 'myvar'
+    }
+  }
 }
 </script>
 
