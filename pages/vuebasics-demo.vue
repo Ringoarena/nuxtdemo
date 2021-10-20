@@ -2,11 +2,12 @@
   <v-container>
     <h1>Vue.js basics</h1>
     <hr class="my-10">
-    <h2>In Vue.JS...</h2>
+    <h2 class="mb-5">In Vue.JS...</h2>
     <ul>
       <li><p>All components used on a page/component has to be imported and registered.</p></li>
       <li><p>Every page has to be mapped to a URL manually.</p></li>
       <li><p>All HTML is rendered in the client browser.</p></li>
+      <li><p>State manager plugin has to be set up manually.</p></li>
     </ul>
     <v-row v-if="person" class="mt-4">
         <v-col cols="4">

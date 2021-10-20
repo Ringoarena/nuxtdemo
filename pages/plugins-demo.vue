@@ -1,8 +1,7 @@
 <template>
   <section>
     <h1>Plugins demo</h1>
-    <p>Plugins are used to provide a global, abstract interface to third party libraries.</p>
-    <p>They replace the vue.use(plugin) syntax</p>
+    <p>Plugins are used to inject global variables, they can be used to provide abstract interfaces to third party libraries.</p>
     <hr class="my-10">
     <v-row>
       <v-col cols="6">

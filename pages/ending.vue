@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>Ecosystem, links</h1>
+    <h1>The end</h1>
     <hr class="my-10">
     <p>https://vuejs.org/</p>
     <p>https://vuex.vuejs.org/</p>
@@ -9,6 +9,7 @@
     <p>https://www.vuemastery.com/</p>
     <p>https://nuxtjs.org/</p>
     <p>https://masteringnuxt.com/</p>
+    <p>https://github.com/nuxt/nuxt.js</p>
     <p>https://github.com/Ringoarena/nuxtdemo</p>
   </v-container>
 </template>
